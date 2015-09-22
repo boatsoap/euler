@@ -1,5 +1,6 @@
 
 function triangleNumber(find) {
+  var start = Date.now();
   var limit = 1000 * 1000;
   var count = find / 2;
   var num = 0;
@@ -7,6 +8,7 @@ function triangleNumber(find) {
     num += i;
     var divisors = check(num);
     if (divisors > count) {
+      console.log('%s ms', Date.now() - start);
       return num;
     }
   }

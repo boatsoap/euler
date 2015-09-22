@@ -2,6 +2,7 @@ var fs = require('fs');
 
 
 function findMax(arr, cb) {
+  var start = Date.now();
   var step = [];
 
   function _step() {
@@ -25,7 +26,7 @@ function findMax(arr, cb) {
       step = temp;
       return _step();
     }
-    cb(null, getMax(step));
+    cb(start, getMax(step));
   }
   _step();
 }
@@ -44,7 +45,8 @@ fs.readFile('./supporting_files/p067_triangle.txt', {encoding: 'utf-8'}, functio
     return ans;
   });
 
-  findMax(input, function(err, ans) {
+  findMax(input, function(start, ans) {
+    console.log('%s ms', Date.now() - start);
     console.log('Answer:', ans);
   });
 });

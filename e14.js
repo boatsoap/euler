@@ -3,6 +3,8 @@ var oneMillion = 1000 * 1000;
 var max = 0;
 var index;
 
+var start = Date.now();
+
 var collatz = function(num) {
   var cache = num;
   var count = 0;
@@ -31,5 +33,5 @@ for (oneMillion; oneMillion > 0; oneMillion--) {
     index = ans[1];
   }
 }
-
+console.log('%s ms', Date.now() - start);
 console.log(index);
