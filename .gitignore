@@ -1,2 +1,3 @@
 node_modules/
-supporting_files/
+supporting_files
+*.class
