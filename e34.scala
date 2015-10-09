@@ -9,11 +9,13 @@ def factor(i: Long): Long = {
 }
 
 var sum = 0
-for (a <- 145 to 146)
+for (a <- 3 to 1000000)
   if (factor(a) == a)
     sum += a
 
+val t1 = System.nanoTime()
 println(sum)
+println(System.nanoTime() - t1)
 
 //println(factor(0))
 //println(List.range(1, 10).map(factor(_)))
